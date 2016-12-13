@@ -18,9 +18,20 @@ namespace ClassroomManager.Api.Controllers
         private ClassroomDataContext db = new ClassroomDataContext();
 
         // GET: api/Classes
-        public IQueryable<Class> GetClasses()
+        public IHttpActionResult GetClasses()
         {
-            return db.Classes;
+            return Ok(db.Classes
+                        .Select(c => new
+                            {
+                                c.Name,
+                                Teacher = c.Teacher.Name,
+                                c.StartDate,
+                                c.EndDate,
+                                Students = c.Enrollments.Sum(s => s.StudentId)
+                            }
+                               )
+                       );
+
         }
 
         // GET: api/Classes/5
@@ -28,12 +39,32 @@ namespace ClassroomManager.Api.Controllers
         public IHttpActionResult GetClass(int id)
         {
             Class @class = db.Classes.Find(id);
+
             if (@class == null)
             {
                 return NotFound();
             }
 
-            return Ok(@class);
+            var resultSet = new
+            {
+                @class.Name,
+                Teachers = @class.Enrollments.Select(e => new
+                {
+                    e.Class.Teacher.Name
+                }),
+                @class.StartDate,
+                @class.EndDate,
+                Students = @class.Enrollments.Select(e => new
+                {
+                    Name = e.Student.Name,
+                    Email = e.Student.EmailAddress,
+                    Telephone = e.Student.Telephone,
+                    Classes = e.Student.Enrollments.Count()
+                })
+
+            };
+
+            return Ok(resultSet);
         }
 
         // PUT: api/Classes/5
