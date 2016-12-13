@@ -8,7 +8,7 @@ namespace ClassroomManager.Api.Models
     public class Teacher : Person
     {
         public int TeacherId { get; set; }
-        public DateTime StateDate { get; set; }
+        public DateTime StartDate { get; set; }
         public DateTime? EndDate { get; set; }
 
         // Navigation Properties

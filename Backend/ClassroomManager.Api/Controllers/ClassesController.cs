@@ -23,6 +23,7 @@ namespace ClassroomManager.Api.Controllers
             return Ok(db.Classes
                         .Select(c => new
                             {
+                                c.ClassId,
                                 c.Name,
                                 Teacher = c.Teacher.Name,
                                 c.StartDate,
@@ -47,6 +48,7 @@ namespace ClassroomManager.Api.Controllers
 
             var resultSet = new
             {
+                @class.ClassId,
                 @class.Name,
                 Teachers = @class.Enrollments.Select(e => new
                 {
@@ -59,7 +61,7 @@ namespace ClassroomManager.Api.Controllers
                     Name = e.Student.Name,
                     Email = e.Student.EmailAddress,
                     Telephone = e.Student.Telephone,
-                    Classes = e.Student.Enrollments.Count()
+                    Classes = e.Student.Enrollments.Count
                 })
 
             };
@@ -81,7 +83,15 @@ namespace ClassroomManager.Api.Controllers
                 return BadRequest();
             }
 
-            db.Entry(@class).State = EntityState.Modified;
+
+            var dbClass = db.Classes.Find(id);
+
+            dbClass.Name = @class.Name;
+            dbClass.Teacher = @class.Teacher;
+            dbClass.StartDate = @class.StartDate;
+            dbClass.EndDate = @class.EndDate;
+
+            db.Entry(dbClass).State = EntityState.Modified;
 
             try
             {

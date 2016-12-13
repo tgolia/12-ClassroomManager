@@ -20,8 +20,11 @@ namespace ClassroomManager.Api
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
                 new CamelCasePropertyNamesContractResolver();
 
-            // CORS 
+            // Turn on CORS 
             config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
+
+            // Turn on reference handling
+            config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 
             // Web API routes
             config.MapHttpAttributeRoutes();

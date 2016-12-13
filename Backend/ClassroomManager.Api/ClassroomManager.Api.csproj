@@ -138,6 +138,10 @@
     <Compile Include="Migrations\201612121928420_InitialMigration.Designer.cs">
       <DependentUpon>201612121928420_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612131754473_StateDateChange.cs" />
+    <Compile Include="Migrations\201612131754473_StateDateChange.Designer.cs">
+      <DependentUpon>201612131754473_StateDateChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\Enrollment.cs" />
@@ -167,6 +171,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201612121928420_InitialMigration.resx">
       <DependentUpon>201612121928420_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612131754473_StateDateChange.resx">
+      <DependentUpon>201612131754473_StateDateChange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

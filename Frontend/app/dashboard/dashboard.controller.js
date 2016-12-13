@@ -3,14 +3,14 @@
 
     angular
         .module('app')
-        .controller('ClassGridController', ClassGridController);
+        .controller('DashboardController', DashboardController);
 
-    ClassGridController.$inject = [];
+    DashboardController.$inject = [];
 
     /* @ngInject */
-    function ClassGridController() {
+    function DashboardController() {
         var vm = this;
-        vm.title = 'ClassGridController';
+        vm.title = 'DashboardController';
 
         activate();
 
