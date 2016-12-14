@@ -36,12 +36,12 @@
         		})
         			.state('student.grid', {
         				url: '/grid',
-        				controller: 'studentGridController as studentGridCtrl',
+        				controller: 'StudentGridController as studentGridCtrl',
         				templateUrl: '/app/student/student.grid.html'
         			})
         			.state('student.detail', {
         				url: '/detail?id',
-        				controller: 'studentDetailController as studentDetailCtrl',
+        				controller: 'StudentDetailController as studentDetailCtrl',
         				templateUrl: '/app/student/student.detail.html'
         			})
 
@@ -53,12 +53,12 @@
         		})
         			.state('teacher.grid', {
         				url: '/grid',
-        				controller: 'teacherGridController as teacherGridCtrl',
+        				controller: 'TeacherGridController as teacherGridCtrl',
         				templateUrl: '/app/teacher/teacher.grid.html'
         			})
         			.state('teacher.detail', {
         				url: '/detail?id',
-        				controller: 'teacherDetailController as teacherDetailCtrl',
+        				controller: 'TeacherDetailController as teacherDetailCtrl',
         				templateUrl: '/app/teacher/teacher.detail.html'
         			})
 

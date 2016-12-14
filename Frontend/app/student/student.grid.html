@@ -8,34 +8,14 @@
             <th>Classes</th>
             <th></th>
         </thead>
-        <tr>
+        <tr ng-repeat="student in studentGridCtrl.students">
             <!-- ng-repeat will go here -->
-            <td>Travis Golia</td>
-            <td>travis@golia.com</td>
-            <td>123-456-7890</td>
-            <td>15</td>
+            <td>{{student.name}}</td>
+            <td>{{student.emailAddress}}</td>
+            <td>{{student.telephone}}</td>
+            <td>{{student.classes}}</td>
             <td>
-                <button type="button" class="btn btn-primary">Edit</button>&nbsp;&nbsp;
-                <button type="button" class="btn btn-danger">&nbsp;X&nbsp;</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Francisco Crespo</td>
-            <td>francisco@crespo.com</td>
-            <td>123-456-7890</td>
-            <td>20</td>
-            <td>
-                <button type="button" class="btn btn-primary">Edit</button>&nbsp;&nbsp;
-                <button type="button" class="btn btn-danger">&nbsp;X&nbsp;</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Emil Juboori</td>
-            <td>emil@juboori.com</td>
-            <td>123-456-7890</td>
-            <td>10,482</td>
-            <td>
-                <button type="button" class="btn btn-primary">Edit</button>&nbsp;&nbsp;
+                <button href="#!/student/detail" ui-sref="student.detail" type="button" class="btn btn-primary">Edit</button>&nbsp;&nbsp;
                 <button type="button" class="btn btn-danger">&nbsp;X&nbsp;</button>
             </td>
         </tr>

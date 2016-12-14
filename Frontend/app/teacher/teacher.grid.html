@@ -8,34 +8,14 @@
             <th>Classes</th>
             <th></th>
         </thead>
-        <tr>
+        <tr ng-repeat="teacher in teacherGridCtrl.teachers">
             <!-- ng-repeat will go here -->
-            <td>Cameron Wilby</td>
-            <td>cameron@wilby.com</td>
-            <td>123-456-7890</td>
-            <td>15</td>
+            <td>{{teacher.name}}</td>
+            <td>{{teacher.emailAddress}}</td>
+            <td>{{teacher.telephone}}</td>
+            <td>{{teacher.classes}}</td>
             <td>
-                <button type="button" class="btn btn-primary">Edit</button>&nbsp;&nbsp;
-                <button type="button" class="btn btn-danger">&nbsp;X&nbsp;</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Sean Cahall</td>
-            <td>sean@cahall.com</td>
-            <td>123-456-7890</td>
-            <td>20</td>
-            <td>
-                <button type="button" class="btn btn-primary">Edit</button>&nbsp;&nbsp;
-                <button type="button" class="btn btn-danger">&nbsp;X&nbsp;</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Mick Jagger</td>
-            <td>mick@jagger.com</td>
-            <td>123-456-7890</td>
-            <td>10,482</td>
-            <td>
-                <button type="button" class="btn btn-primary">Edit</button>&nbsp;&nbsp;
+                <button href="#!/teacher/detail" ui-sref="teacher.detail" type="button" class="btn btn-primary">Edit</button>&nbsp;&nbsp;
                 <button type="button" class="btn btn-danger">&nbsp;X&nbsp;</button>
             </td>
         </tr>
