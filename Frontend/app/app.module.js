@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app', ['ui.router'])
+        .module('app', ['ui.router','toastr'])
         .config(function($stateProvider, $urlRouterProvider) {
 
         	$stateProvider

@@ -5,14 +5,16 @@
         .module('app')
         .controller('TeacherGridController', TeacherGridController);
 
-    TeacherGridController.$inject = ['teacherFactory','$stateParams'];
+    TeacherGridController.$inject = ['teacherFactory','$stateParams','toastr'];
 
     /* @ngInject */
-    function TeacherGridController(teacherFactory,$stateParams) {
+    function TeacherGridController(teacherFactory,$stateParams,toastr) {
         var vm = this;
         vm.title = 'TeacherGridController';
 
         vm.teachers = [];
+
+        vm.removeTeacher = removeTeacher;
 
         activate();
 
@@ -25,6 +27,19 @@
                     vm.teachers = response.data;
                     console.log(vm.teachers)
                 });
+        }
+
+        function removeTeacher(teacher) {
+            teacherFactory
+                .removeTeacher(teacher.teacherId)
+                .then(function(response) {
+                    var index = vm.teachers.indexOf(teacher);
+                    vm.teachers.splice(index, 1);
+                    toastr.success("Delete successful");
+                })
+                .catch(function(error) {
+                    toastr.error("(idiot), Delete NOT successful");
+                })
         }
     }
 })();

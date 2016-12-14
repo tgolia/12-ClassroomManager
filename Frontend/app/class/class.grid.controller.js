@@ -5,14 +5,16 @@
         .module('app')
         .controller('ClassGridController', ClassGridController);
 
-    ClassGridController.$inject = ['classFactory','$stateParams'];
+    ClassGridController.$inject = ['classFactory','$stateParams','toastr'];
 
     /* @ngInject */
-    function ClassGridController(classFactory,$stateParams) {
+    function ClassGridController(classFactory,$stateParams,toastr) {
         var vm = this;
         vm.title = 'ClassGridController';
 
         vm.classes = [];
+
+        vm.removeClass = removeClass;
 
         activate();
 
@@ -27,6 +29,19 @@
                 });
         }
 
+        function removeClass(_class) {
+            classFactory
+                .removeClass(_class.classId)
+                .then(function(response) {
+                    var index = vm.classes.indexOf(_class);
+                    vm.classes.splice(index, 1);
+                    toastr.success("Delete successful");
+                    console.log('success');
+                })
+                .catch(function(error) {
+                    toastr.error("(idiot), Delete NOT successful");
+                })
+        }
 
         // function create() {
         //     if (vm.newTodo.priority == null) {
@@ -53,19 +68,6 @@
         //         })
         //         .catch(function(error) {
         //             toastr.error("Save NOT successful");
-        //         })
-        // }
-
-        // function remove(todo) {
-        //     classFactory
-        //         .remove(todo.todoId)
-        //         .then(function(response) {
-        //             var index = vm.todoes.indexOf(todo);
-        //             vm.todoes.splice(index, 1);
-        //             toastr.success("Delete successful");
-        //         })
-        //         .catch(function(error) {
-        //             toastr.error("Delete NOT successful");
         //         })
         // }
 

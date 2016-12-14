@@ -18,7 +18,7 @@
             <td>{{class.students}}</td>
             <td>
                 <button href="#!/class/detail" ui-sref="class.detail" type="button" class="btn btn-primary" ng-click="">Edit</button>&nbsp;&nbsp;
-                <button type="button" class="btn btn-danger">&nbsp;X&nbsp;</button>
+                <button type="button" class="btn btn-danger" ng-click="classGridCtrl.removeClass(class)">&nbsp;X&nbsp;</button>
             </td>
         </tr>
     </table>
