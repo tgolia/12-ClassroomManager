@@ -14,17 +14,34 @@
 
         vm.students = [];
 
+        vm.removeStudent = removeStudent;
+
         activate();
 
         ////////////////
 
-               function activate() {
+        function activate() {
             studentFactory
                 .getStudents()
                 .then(function(response) {
                     vm.students = response.data;
                     console.log(vm.students);
                 });
+        }
+
+        function removeStudent(student) {
+            studentFactory
+                .removeStudent(student.studentId)
+                .then(function(response) {
+                    var index = vm.students.indexOf(student);
+                    vm.students.splice(index, 1);
+                    //toastr.success("Delete successful");
+                    console.log("Delete successful");
+                })
+                .catch(function(error) {
+                    //toastr.error("(idiot), Delete NOT successful");
+                    console.log("Delete didn't work mang");
+                })
         }
     }
 })();

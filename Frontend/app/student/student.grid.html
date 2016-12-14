@@ -1,5 +1,5 @@
 <div class="container-fluid" style="margin: 10px;">
-    <button type="button" class="btn btn-primary" style="float: right;">+ Add Student</button>
+    <button href="#!/student/detail" ui-sref="student.detail" type="button" class="btn btn-primary" style="float: right;">+ Add Student</button>
     <table class="table table-striped table-hover">
         <thead>
             <th>Name</th>
@@ -8,15 +8,14 @@
             <th>Classes</th>
             <th></th>
         </thead>
-        <tr ng-repeat="student in studentGridCtrl.students">
-            <!-- ng-repeat will go here -->
+        <tr ng-repeat="student in studentGridCtrl.students"> <!-- TODO: Add a sortBy  -->
             <td>{{student.name}}</td>
             <td>{{student.emailAddress}}</td>
             <td>{{student.telephone}}</td>
             <td>{{student.classes}}</td>
             <td>
                 <button href="#!/student/detail" ui-sref="student.detail" type="button" class="btn btn-primary">Edit</button>&nbsp;&nbsp;
-                <button type="button" class="btn btn-danger">&nbsp;X&nbsp;</button>
+                <button type="button" class="btn btn-danger" ng-click="studentGridCtrl.remove(student)">&nbsp;X&nbsp;</button>
             </td>
         </tr>
     </table>

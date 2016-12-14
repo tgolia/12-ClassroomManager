@@ -5,10 +5,10 @@
         .module('app')
         .controller('DashboardController', DashboardController);
 
-    DashboardController.$inject = [];
+    DashboardController.$inject = ['$stateParams'];
 
     /* @ngInject */
-    function DashboardController() {
+    function DashboardController($stateParams) {
         var vm = this;
         vm.title = 'DashboardController';
 

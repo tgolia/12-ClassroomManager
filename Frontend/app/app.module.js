@@ -8,7 +8,7 @@
         	$stateProvider
         		.state('dashboard', {
         			url: '/dashboard',
-        			controller: 'dashboardController as dashboardCtrl',
+        			controller: 'DashboardController as dashboardCtrl',
         			templateUrl: 'app/dashboard/dashboard.html'
         		})
 
