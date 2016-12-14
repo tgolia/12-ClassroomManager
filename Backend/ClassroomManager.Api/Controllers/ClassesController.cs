@@ -28,9 +28,8 @@ namespace ClassroomManager.Api.Controllers
                                 Teacher = c.Teacher.Name,
                                 c.StartDate,
                                 c.EndDate,
-                                Students = c.Enrollments.Sum(s => s.StudentId)
-                            }
-                               )
+                                Students = c.Enrollments.Count
+                            })
                        );
 
         }
@@ -50,17 +49,16 @@ namespace ClassroomManager.Api.Controllers
             {
                 @class.ClassId,
                 @class.Name,
-                Teachers = @class.Enrollments.Select(e => new
-                {
-                    e.Class.Teacher.Name
-                }),
+                Teacher = @class.Teacher.Name,
+                @class.Teacher.TeacherId,
                 @class.StartDate,
                 @class.EndDate,
                 Students = @class.Enrollments.Select(e => new
                 {
-                    Name = e.Student.Name,
+                    e.Student.StudentId,
+                    e.Student.Name,
                     Email = e.Student.EmailAddress,
-                    Telephone = e.Student.Telephone,
+                    e.Student.Telephone,
                     Classes = e.Student.Enrollments.Count
                 })
 
@@ -87,7 +85,7 @@ namespace ClassroomManager.Api.Controllers
             var dbClass = db.Classes.Find(id);
 
             dbClass.Name = @class.Name;
-            dbClass.Teacher = @class.Teacher;
+            dbClass.TeacherId = @class.TeacherId; // Do we update using the teacherId here? Is it okay to just grab entire teacher object?
             dbClass.StartDate = @class.StartDate;
             dbClass.EndDate = @class.EndDate;
 

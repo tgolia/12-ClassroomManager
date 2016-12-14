@@ -27,8 +27,6 @@ namespace ClassroomManager.Api.Controllers
                           t.Name,
                           t.EmailAddress,
                           t.Telephone,
-                          t.StartDate,
-                          t.EndDate,
                           Classes = t.Classes.Count
                   });
 
@@ -51,8 +49,6 @@ namespace ClassroomManager.Api.Controllers
                 teacher.Name,
                 teacher.EmailAddress,
                 teacher.Telephone,
-                teacher.StartDate,
-                teacher.EndDate,
                 Classes = teacher.Classes.Select(c => new
                 {
                     c.ClassId,
@@ -83,8 +79,6 @@ namespace ClassroomManager.Api.Controllers
 
             dbTeacher.Name = teacher.Name;
             dbTeacher.EmailAddress = teacher.EmailAddress;
-            dbTeacher.StartDate = teacher.StartDate;
-            dbTeacher.EndDate = teacher.EndDate;
             dbTeacher.Telephone = teacher.Telephone;
 
             db.Entry(dbTeacher).State = EntityState.Modified;

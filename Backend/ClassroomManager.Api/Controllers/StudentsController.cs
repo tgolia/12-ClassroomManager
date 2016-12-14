@@ -27,7 +27,7 @@ namespace ClassroomManager.Api.Controllers
                                       s.Name,
                                       s.EmailAddress,
                                       s.Telephone,
-                                      Classes = s.Enrollments.Sum(e => e.ClassId)
+                                      Classes = s.Enrollments.Count
                                   }
                               )
                      );
@@ -52,10 +52,12 @@ namespace ClassroomManager.Api.Controllers
                 student.Telephone,
                 Classes = student.Enrollments.Select(e => new
                 {
-                    Name = e.Class.Name,
+                    e.Class.ClassId,
+                    e.Class.Name,
                     Teacher = e.Class.Teacher.Name,
-                    StartDate = e.Class.StartDate,
-                    EndDate = e.Class.EndDate
+                    e.Class.Teacher.TeacherId,
+                    e.Class.StartDate,
+                    e.Class.EndDate
                 })
             };
 
