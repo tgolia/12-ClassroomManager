@@ -9,7 +9,7 @@
             <th>Classes</th>
             <th></th>
         </thead>
-        <tr ng-repeat="student in studentGridCtrl.students"> <!-- TODO: Add a sortBy  -->
+        <tr ng-repeat="student in studentGridCtrl.students" ui-sref="student.detail({id:{{student.studentId}}})" style="cursor: pointer;"> <!-- TODO: Add a sortBy  -->
             <td>{{student.name}}</td>
             <td>{{student.emailAddress}}</td>
             <td>{{student.telephone}}</td>

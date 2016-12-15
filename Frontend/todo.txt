@@ -4,8 +4,18 @@ Fix toastr
 
 Add icons to buttons
 
-Add ng-click to ng-repeat options 
-
 Center "Select a teacher"
 
-Create dashboard with summary stats
+Fix highlighted tab
+
+orderBy for ng-repeats
+
+simple dropdown for True/Falses
+
+error messages for empty fields and such
+
+commenting
+
+add ui-calendar to dashboard
+
+integrate twilio

@@ -10,7 +10,7 @@
             <th>Students</th>
             <th></th>
         </thead>
-        <tr ng-repeat="class in classGridCtrl.classes"> 
+        <tr ng-repeat="class in classGridCtrl.classes" ui-sref="class.detail({id:{{class.classId}}})" style="cursor: pointer;"> 
             <td>{{class.name}}</td>
             <td>{{class.teacher}}</td>
             <td>{{class.startDate}}</td>

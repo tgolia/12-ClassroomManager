@@ -1,1 +1,26 @@
-<h1>Dashboard page</h1>
+<div class="container-fluid">
+    <div class="jumbotron text-center">
+        <div class="row">
+            <div class="col-md-4" ui-sref="class.grid" style="cursor: pointer;">
+                <h1><u>Classes</u></h1>
+            </div>
+            <div class="col-md-4" ui-sref="student.grid" style="cursor: pointer;">
+                <h1><u>Students</u></h1>
+            </div>
+            <div class="col-md-4" ui-sref="teacher.grid" style="cursor: pointer;">
+                <h1><u>Teachers</u></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" ui-sref="class.grid" style="cursor: pointer;">
+                <h1>{{dashboardCtrl.classesCount}}</h1>
+            </div>
+            <div class="col-md-4" ui-sref="student.grid" style="cursor: pointer;">
+                <h1>{{dashboardCtrl.studentsCount}}</h1>
+            </div>
+            <div class="col-md-4" ui-sref="teacher.grid" style="cursor: pointer;">
+                <h1>{{dashboardCtrl.teachersCount}}</h1>
+            </div>
+        </div>
+    </div>
+</div>

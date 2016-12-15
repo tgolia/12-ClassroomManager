@@ -47,17 +47,17 @@
             </div>
             <table class="table table-striped table-hover">
                 <thead>
-                    <th>Name</th>
+                    <th>Student Name</th>
                     <th>Email</th>
                     <th>Telephone</th>
                     <th>Classes</th>
                     <th></th>
                 </thead>
-                <tr ng-repeat="student in classDetailCtrl.currentClass.students" ui-sref="student.detail({id:{{student.studentId}}})" style="cursor: pointer;">
-                    <td>{{student.name}}</td>
-                    <td>{{student.email}}</td>
-                    <td>{{student.telephone}}</td>
-                    <td>{{student.classes}}</td>
+                <tr ng-repeat="student in classDetailCtrl.currentClass.students">
+                    <td ui-sref="student.detail({id:{{student.studentId}}})" style="cursor: pointer;">{{student.name}}</td>
+                    <td ui-sref="student.detail({id:{{student.studentId}}})" style="cursor: pointer;">{{student.email}}</td>
+                    <td ui-sref="student.detail({id:{{student.studentId}}})" style="cursor: pointer;">{{student.telephone}}</td>
+                    <td ui-sref="student.detail({id:{{student.studentId}}})" style="cursor: pointer;">{{student.classes}}</td>
                     <td><button type="button" class="btn btn-danger" ng-click="classDetailCtrl.removeStudentFromClass(classDetailCtrl.classId, student.studentId)">&nbsp;X&nbsp;</button></td>
                 </tr>
             </table>
@@ -81,7 +81,7 @@
                 </div>              
             </div>
             <br>
-            <div class="row">
+            <div class="row text-center">
                  <div class="col-md-4">
                     <p><b>Teacher</b></p>
                     <select class="form-control " ng-model="classDetailCtrl.newClass.teacherId ">

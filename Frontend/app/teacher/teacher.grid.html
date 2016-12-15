@@ -9,7 +9,7 @@
             <th>Classes</th>
             <th></th>
         </thead>
-        <tr ng-repeat="teacher in teacherGridCtrl.teachers">
+        <tr ng-repeat="teacher in teacherGridCtrl.teachers" ui-sref="teacher.detail({id:{{teacher.teacherId}}})" style="cursor: pointer;">
             <!-- ng-repeat will go here -->
             <td>{{teacher.name}}</td>
             <td>{{teacher.emailAddress}}</td>
