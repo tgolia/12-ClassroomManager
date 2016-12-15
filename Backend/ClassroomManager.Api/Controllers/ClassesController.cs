@@ -49,7 +49,6 @@ namespace ClassroomManager.Api.Controllers
             {
                 @class.ClassId,
                 @class.Name,
-                Teacher = @class.Teacher.Name,
                 @class.Teacher.TeacherId,
                 @class.StartDate,
                 @class.EndDate,

@@ -1,4 +1,5 @@
 <div class="container-fluid" style="margin: 10px;">
+    <h1>Classes</h1>
     <button ui-sref="class.detail" type="button" class="btn btn-primary" style="float: right;">+ Add Class</button>
     <table class="table table-striped table-hover">
         <thead>
@@ -10,14 +11,13 @@
             <th></th>
         </thead>
         <tr ng-repeat="class in classGridCtrl.classes"> 
-            <!-- ng-repeat will go here -->
             <td>{{class.name}}</td>
             <td>{{class.teacher}}</td>
             <td>{{class.startDate}}</td>
             <td>{{class.endDate}}</td>
             <td>{{class.students}}</td>
             <td>
-                <button ui-sref="class.detail" type="button" class="btn btn-primary" ng-click="">Edit</button>&nbsp;&nbsp;
+                <button ui-sref="class.detail({id:{{class.classId}}})" type="button" class="btn btn-primary" ng-click="">Edit</button>&nbsp;&nbsp;
                 <button type="button" class="btn btn-danger" ng-click="classGridCtrl.removeClass(class)">&nbsp;X&nbsp;</button>
             </td>
         </tr>

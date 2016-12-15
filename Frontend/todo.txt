@@ -1,9 +1,11 @@
 TODO:
 
-Add class
-
 Fix toastr
 
 Add icons to buttons
 
 Add ng-click to ng-repeat options 
+
+Center "Select a teacher"
+
+Create dashboard with summary stats

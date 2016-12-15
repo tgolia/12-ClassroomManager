@@ -25,7 +25,7 @@
                 .getClasses()
                 .then(function(response) {
                     vm.classes = response.data;
-                    console.log(vm.classes)
+                    console.log(vm.classes);
                 });
         }
 
@@ -35,11 +35,12 @@
                 .then(function(response) {
                     var index = vm.classes.indexOf(_class);
                     vm.classes.splice(index, 1);
-                    toastr.success("Delete successful");
-                    console.log('success');
+                    //toastr.success("Delete successful");
+                    console.log('successful class deletion');
                 })
                 .catch(function(error) {
-                    toastr.error("(idiot), Delete NOT successful");
+                    //toastr.error("(idiot), Delete NOT successful");
+                    console.log('successful class deletion');
                 })
         }
     }

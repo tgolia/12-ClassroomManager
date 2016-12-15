@@ -10,11 +10,13 @@
     function classFactory($http) {
         var vm = this;
         var service = {
-            createClass   :   createClass,
-            getClasses    :   getClasses,
-            getClass      :   getClass,
-            updateClass   :   updateClass,
-            removeClass   :   removeClass
+            createClass             :   createClass,
+            getClasses              :   getClasses,
+            getClass                :   getClass,
+            updateClass             :   updateClass,
+            removeClass             :   removeClass,
+            addStudentToClass       :   addStudentToClass,
+            removeStudentFromClass  :   removeStudentFromClass
         };
 
 
@@ -22,8 +24,8 @@
 
         ///////////////////
 
-        function createClass(classId, studentId) {
-            return $http.post('http://localhost:65238/api/classes/'+classId+'/students/'+studentId);
+        function createClass(_class) {
+            return $http.post('http://localhost:65238/api/classes', _class);
         }
 
         function getClasses() {
@@ -41,6 +43,14 @@
 
         function removeClass(id) {
             return $http.delete('http://localhost:65238/api/classes/'+id); 
+        }
+
+        function addStudentToClass(classId, studentId) {
+            return $http.post('http://localhost:65238/api/classes/'+classId+'/students/'+studentId);
+        }
+
+        function removeStudentFromClass(classId, studentId) {
+            return $http.delete('http://localhost:65238/api/classes/'+classId+'/students/'+studentId);
         }
     }
 })();
