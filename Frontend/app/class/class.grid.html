@@ -1,5 +1,5 @@
 <div class="container-fluid" style="margin: 10px;">
-    <button href="#!/class/detail" ui-sref="class.detail" type="button" class="btn btn-primary" style="float: right;">+ Add Class</button>
+    <button ui-sref="class.detail" type="button" class="btn btn-primary" style="float: right;">+ Add Class</button>
     <table class="table table-striped table-hover">
         <thead>
             <th>Name</th>
@@ -17,7 +17,7 @@
             <td>{{class.endDate}}</td>
             <td>{{class.students}}</td>
             <td>
-                <button href="#!/class/detail" ui-sref="class.detail" type="button" class="btn btn-primary" ng-click="">Edit</button>&nbsp;&nbsp;
+                <button ui-sref="class.detail" type="button" class="btn btn-primary" ng-click="">Edit</button>&nbsp;&nbsp;
                 <button type="button" class="btn btn-danger" ng-click="classGridCtrl.removeClass(class)">&nbsp;X&nbsp;</button>
             </td>
         </tr>

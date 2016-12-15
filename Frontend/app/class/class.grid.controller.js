@@ -60,16 +60,5 @@
         //     }
         // }
 
-        // function update(todo) {
-        //     classFactory
-        //         .update(todo.todoId, todo)
-        //         .then(function(response) {
-        //             toastr.success("Save successful");
-        //         })
-        //         .catch(function(error) {
-        //             toastr.error("Save NOT successful");
-        //         })
-        // }
-
     }
 })();

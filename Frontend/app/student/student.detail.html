@@ -1,4 +1,4 @@
-<div class="container-fluid" style="margin: 10px;">
+<div ng-hide="studentDetailCtrl.isNewStudent" class="container-fluid" style="margin: 10px;">
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">Edit Student</h3>
@@ -7,20 +7,20 @@
             <div class="row">
                 <div class="col-md-4">
                     <p><b>Full Name</b></p>
-                    <input class="form-control" type="text">
+                    <input ng-model="studentDetailCtrl.currentStudent.name" class="form-control" type="text">
                 </div>
                 <div class="col-md-4">
                     <p><b>Email</b></p>
-                    <input class="form-control" type="text">
+                    <input ng-model="studentDetailCtrl.currentStudent.emailAddress" class="form-control" type="text">
                 </div>
                 <div class="col-md-4">
                     <p><b>Telephone</b></p>
-                    <input class="form-control" type="text">
+                    <input ng-model="studentDetailCtrl.currentStudent.telephone" class="form-control" type="text">
                 </div>
             </div>
         </div>
         <div class="panel-footer clearfix">
-            <button type="button" class="btn btn-primary" style="float: right;">Save</button>
+            <button ng-click="studentDetailCtrl.updateStudent(studentDetailCtrl.studentId, studentDetailCtrl.currentStudent)" type="button" class="btn btn-primary" style="float: right;">Save</button>
         </div>
     </div>
     <br>
@@ -36,26 +36,43 @@
                     <th>Start Date</th>
                     <th>End Date</th>
                 </thead>
-                <tr>
+                <tr ng-repeat="class in studentDetailCtrl.currentStudent.classes">
                     <!-- ng-repeat will go here -->
-                    <td>Cohort 5</td>
-                    <td>Cameron Wilby</td>
-                    <td>Jan 1, 2016</td>
-                    <td>Feb 1, 2016</td>
-                </tr>
-                <tr>
-                    <td>Cohort 6</td>
-                    <td>Sean Cahall</td>
-                    <td>Feb 1, 2016</td>
-                    <td>Mar 1, 2016</td>
-                </tr>
-                <tr>
-                    <td>Cohort 7</td>
-                    <td>Mick Jagger</td>
-                    <td>Mar 1, 2016</td>
-                    <td>Apr 1, 2016</td>
+                    <td>{{class.name}}</td>
+                    <td>{{class.teacher}}</td>
+                    <td>{{class.startDate}}</td>
+                    <td>{{class.endDate}}</td>
                 </tr>
             </table>
         </div>
     </div>
 </div>
+<div ng-show="studentDetailCtrl.isNewStudent" class="container-fluid" style="margin: 10px;">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Add Student</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <p><b>Full Name</b></p>
+                    <input ng-model="studentDetailCtrl.newStudent.name" class="form-control" type="text">
+                </div>
+                <div class="col-md-4">
+                    <p><b>Email</b></p>
+                    <input ng-model="studentDetailCtrl.newStudent.emailAddress" class="form-control" type="text">
+                </div>
+                <div class="col-md-2">
+                    <p><b>Telephone</b></p>
+                    <input ng-model="studentDetailCtrl.newStudent.telephone" class="form-control" type="text">
+                </div>
+                <div class="col-md-2">
+                    <p><b>Crininal Record?</b></p>
+                    <input ng-model="studentDetailCtrl.newStudent.hasCriminalRecord" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="panel-footer clearfix">
+                <button ng-click="studentDetailCtrl.createStudent(studentDetailCtrl.newStudent)" type="button" class="btn btn-primary" style="float: right;">Add</button>
+            </div>
+        </div>
+    </div>

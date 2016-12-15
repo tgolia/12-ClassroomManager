@@ -1,0 +1,15 @@
+TODO:
+
+Add student/teacher
+-Do I want to create a new "student.add.html"? Or can I use ng-hide/show? Or is there a better way?
+
+Add class
+
+Edit student/teacher/class
+-display ng-repeat correctly
+
+Fix toastr
+
+Add icons to buttons
+
+Add ng-click to ng-repeat options 
