@@ -24,12 +24,13 @@
 
         function activate() {
             if (vm.studentId != null) {
-                vm.newStudent = false;
+                vm.isNewStudent = false;
+                console.log("Edit existing student");
                 studentFactory
                     .getStudent(vm.studentId)
                     .then(function(response) {
                         vm.currentStudent = response.data;
-                        console.log(vm.currentStudent);
+                        //console.log(vm.currentStudent);
                 });
             } else {
                 console.log("Add new student");

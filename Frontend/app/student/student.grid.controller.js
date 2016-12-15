@@ -35,10 +35,12 @@
                 .then(function(response) {
                     var index = vm.students.indexOf(student);
                     vm.students.splice(index, 1);
-                    toastr.success("Delete successful");
+                    console.log("successful deletion");
+                    //toastr.success("Delete successful");
                 })
                 .catch(function(error) {
-                    toastr.error("(idiot), Delete NOT successful");
+                    console.log("failed deletion");
+                    //toastr.error("(idiot), Delete NOT successful");
                 })
         }
     }

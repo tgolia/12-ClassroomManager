@@ -1,26 +1,27 @@
 <div ng-hide="studentDetailCtrl.isNewStudent" class="container-fluid" style="margin: 10px;">
     <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title">Edit Student</h3>
-        </div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-4">
-                    <p><b>Full Name</b></p>
-                    <input ng-model="studentDetailCtrl.currentStudent.name" class="form-control" type="text">
-                </div>
-                <div class="col-md-4">
-                    <p><b>Email</b></p>
-                    <input ng-model="studentDetailCtrl.currentStudent.emailAddress" class="form-control" type="text">
-                </div>
-                <div class="col-md-4">
-                    <p><b>Telephone</b></p>
-                    <input ng-model="studentDetailCtrl.currentStudent.telephone" class="form-control" type="text">
+        <div>
+            <div class="panel-heading">
+                <h3 class="panel-title">Edit Student</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <p><b>Full Name</b></p>
+                        <input ng-model="studentDetailCtrl.currentStudent.name" class="form-control" type="text">
+                    </div>
+                    <div class="col-md-4">
+                        <p><b>Email</b></p>
+                        <input ng-model="studentDetailCtrl.currentStudent.emailAddress" class="form-control" type="text">
+                    </div>
+                    <div class="col-md-4">
+                        <p><b>Telephone</b></p>
+                        <input ng-model="studentDetailCtrl.currentStudent.telephone" class="form-control" type="text">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="panel-footer clearfix">
-            <button ng-click="studentDetailCtrl.updateStudent(studentDetailCtrl.studentId, studentDetailCtrl.currentStudent)" type="button" class="btn btn-primary" style="float: right;">Save</button>
+            <br>
+                <button ng-click="studentDetailCtrl.updateStudent(studentDetailCtrl.studentId, studentDetailCtrl.currentStudent)" type="button" class="btn btn-primary" style="float: right;">Save</button>
         </div>
     </div>
     <br>
@@ -37,7 +38,6 @@
                     <th>End Date</th>
                 </thead>
                 <tr ng-repeat="class in studentDetailCtrl.currentStudent.classes">
-                    <!-- ng-repeat will go here -->
                     <td>{{class.name}}</td>
                     <td>{{class.teacher}}</td>
                     <td>{{class.startDate}}</td>
@@ -71,8 +71,8 @@
                     <input ng-model="studentDetailCtrl.newStudent.hasCriminalRecord" class="form-control" type="text">
                 </div>
             </div>
-            <div class="panel-footer clearfix">
+<br>
                 <button ng-click="studentDetailCtrl.createStudent(studentDetailCtrl.newStudent)" type="button" class="btn btn-primary" style="float: right;">Add</button>
-            </div>
         </div>
     </div>
+</div>

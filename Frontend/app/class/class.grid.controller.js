@@ -42,23 +42,5 @@
                     toastr.error("(idiot), Delete NOT successful");
                 })
         }
-
-        // function create() {
-        //     if (vm.newTodo.priority == null) {
-        //         toastr.error("Please enter a priority");
-        //     } else {
-        //         classFactory
-        //             .create(vm.newTodo)
-        //             .then(function(response) {
-        //                 vm.todoes.push(response.data);
-        //                 vm.newTodo = {};
-        //                 toastr.success("Add successful");
-        //             })
-        //             .catch(function(error) {
-        //                 toastr.error("Add NOT successful");
-        //             })
-        //     }
-        // }
-
     }
 })();
