@@ -53,23 +53,25 @@
             <div class="row">
                 <div class="col-md-4">
                     <p><b>Full Name</b></p>
-                    <input ng-model="studentDetailCtrl.newStudent.name" class="form-control" type="text">
+                    <input ng-model="studentDetailCtrl.newStudent.name" class="form-control" type="text"  placeholder="John Smith">
                 </div>
                 <div class="col-md-4">
                     <p><b>Email</b></p>
-                    <input ng-model="studentDetailCtrl.newStudent.emailAddress" class="form-control" type="text">
+                    <input ng-model="studentDetailCtrl.newStudent.emailAddress" class="form-control" type="text"  placeholder="john@smith.com">
                 </div>
                 <div class="col-md-2">
                     <p><b>Telephone</b></p>
-                    <input ng-model="studentDetailCtrl.newStudent.telephone" class="form-control" type="text">
+                    <input ng-model="studentDetailCtrl.newStudent.telephone" class="form-control" type="text"  placeholder="123-456-7890">
                 </div>
                 <div class="col-md-2">
-                    <p><b>Crininal Record?</b></p>
-                    <input ng-model="studentDetailCtrl.newStudent.hasCriminalRecord" class="form-control" type="text">
+                    <p><b>Criminal Record?</b></p>
+                    <input ng-model="studentDetailCtrl.newStudent.hasCriminalRecord" class="form-control" type="text"  placeholder="true/false">
                 </div>
             </div>
             <br>
-            <button ng-click="studentDetailCtrl.createStudent(studentDetailCtrl.newStudent)" type="button" class="btn btn-primary" style="float: right;">Add</button>
+            <button ng-click="studentDetailCtrl.createStudent(studentDetailCtrl.newStudent)" type="button" class="btn btn-primary" style="float: right;">
+                <span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Add Student
+            </button>
         </div>
     </div>
 </div>

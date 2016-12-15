@@ -5,10 +5,10 @@
         .module('app')
         .controller('ClassGridController', ClassGridController);
 
-    ClassGridController.$inject = ['classFactory','$stateParams','toastr'];
+    ClassGridController.$inject = ['classFactory','toastr'];
 
     /* @ngInject */
-    function ClassGridController(classFactory,$stateParams,toastr) {
+    function ClassGridController(classFactory,toastr) {
         var vm = this;
         vm.title = 'ClassGridController';
 

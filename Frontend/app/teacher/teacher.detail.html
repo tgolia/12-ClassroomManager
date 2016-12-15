@@ -53,27 +53,29 @@
             <div class="row">
                 <div class="col-md-3">
                     <p><b>Full Name</b></p>
-                    <input ng-model="teacherDetailCtrl.newTeacher.name" class="form-control" type="text">
+                    <input ng-model="teacherDetailCtrl.newTeacher.name" class="form-control" type="text" placeholder="John Smith">
                 </div>
                 <div class="col-md-3">
                     <p><b>Email</b></p>
-                    <input ng-model="teacherDetailCtrl.newTeacher.emailAddress" class="form-control" type="text">
+                    <input ng-model="teacherDetailCtrl.newTeacher.emailAddress" class="form-control" type="text" placeholder="john@smith.com">
                 </div>
                 <div class="col-md-2">
                     <p><b>Telephone</b></p>
-                    <input ng-model="teacherDetailCtrl.newTeacher.telephone" class="form-control" type="text">
+                    <input ng-model="teacherDetailCtrl.newTeacher.telephone" class="form-control" type="text" placeholder="123-456-7890">
                 </div>
                 <div class="col-md-2">
                     <p><b>Start Date</b></p>
-                    <input ng-model="teacherDetailCtrl.newTeacher.startDate" class="form-control" type="text">
+                    <input ng-model="teacherDetailCtrl.newTeacher.startDate" class="form-control" type="text" placeholder="2016-01-01">
                 </div>
                 <div class="col-md-2">
                     <p><b>End Date</b></p>
-                    <input ng-model="teacherDetailCtrl.newTeacher.endDate" class="form-control" type="text">
+                    <input ng-model="teacherDetailCtrl.newTeacher.endDate" class="form-control" type="text" placeholder="2016-12-01">
                 </div>
             </div>
             <br>
-            <button ng-click="teacherDetailCtrl.createTeacher(teacherDetailCtrl.newTeacher)" type="button" class="btn btn-primary" style="float: right;">Add</button>
+            <button ng-click="teacherDetailCtrl.createTeacher(teacherDetailCtrl.newTeacher)" type="button" class="btn btn-primary" style="float: right;">
+                <span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Add Teacher
+            </button>
         </div>
     </div>
 </div>

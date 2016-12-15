@@ -2,8 +2,6 @@ TODO:
 
 Fix toastr
 
-Add icons to buttons
-
 Center "Select a teacher"
 
 Fix highlighted tab
@@ -14,8 +12,10 @@ simple dropdown for True/Falses
 
 error messages for empty fields and such
 
-commenting
+commentting
 
 add ui-calendar to dashboard
 
 integrate twilio
+
+time format is oogly
