@@ -37,8 +37,8 @@
                 <tr ng-repeat="class in studentDetailCtrl.currentStudent.classes" ui-sref="class.detail({id:{{class.classId}}})" style="cursor: pointer;">
                     <td>{{class.name}}</td>
                     <td>{{class.teacher}}</td>
-                    <td>{{class.startDate}}</td>
-                    <td>{{class.endDate}}</td>
+                    <td>{{class.startDate | date}}</td>
+                    <td>{{class.endDate | date}}</td>
                 </tr>
             </table>
         </div>

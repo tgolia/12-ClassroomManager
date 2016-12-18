@@ -12,8 +12,7 @@
                 </div>
                 <div class="col-md-6">
                     <p><b>Teacher</b></p>
-                    <select class="form-control" ng-model="classDetailCtrl.currentClass.teacherId">
-                        <option ng-repeat="teacher in classDetailCtrl.teachers" ng-value="teacher.teacherId">{{teacher.name}}</option>
+                    <select class="form-control" ng-options="teacher.teacherId as teacher.name for teacher in classDetailCtrl.teachers" ng-model="classDetailCtrl.currentClass.teacherId">
                     </select>
                 </div>
             </div>
@@ -39,9 +38,8 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-2">
-                    <select class="form-control" ng-model="classDetailCtrl.newStudentId">
-                        <option value="" disabled selected >--- Add Student To Class ---</option> <!-- TODO: figure out how to center this -->
-                        <option ng-repeat="student in classDetailCtrl.students" ng-value="student.studentId">{{student.name}}</option>
+                    <select class="form-control" ng-options="student.studentId as student.name for student in classDetailCtrl.students" ng-model="classDetailCtrl.newStudentId">
+                        <option value="" disabled selected>--- Add Student To Class ---</option> <!-- TODO: figure out how to center this -->
                     </select>
                 </div>
                 <button ng-click="classDetailCtrl.addStudentToClass(classDetailCtrl.classId, classDetailCtrl.newStudentId)" type="button" class="btn btn-primary">
@@ -61,13 +59,14 @@
                     <td ui-sref="student.detail({id:{{student.studentId}}})" style="cursor: pointer;">{{student.email}}</td>
                     <td ui-sref="student.detail({id:{{student.studentId}}})" style="cursor: pointer;">{{student.telephone}}</td>
                     <td ui-sref="student.detail({id:{{student.studentId}}})" style="cursor: pointer;">{{student.classes}}</td>
-                    <td><button type="button" class="btn btn-danger" ng-click="classDetailCtrl.removeStudentFromClass(classDetailCtrl.classId, student.studentId)">&nbsp;X&nbsp;</button></td>
+                    <td>
+                        <button type="button" class="btn btn-danger" ng-click="classDetailCtrl.removeStudentFromClass(classDetailCtrl.classId, student.studentId)">&nbsp;X&nbsp;</button>
+                    </td>
                 </tr>
             </table>
         </div>
     </div>
 </div>
-
 <!-- Add new class html -->
 <div ng-show="classDetailCtrl.isNewClass" class="container-fluid" style="margin: 10px;">
     <div class="panel panel-primary">
@@ -77,40 +76,40 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-4">
-                    <p><b>Name</b></p>
-                    <input ng-model="classDetailCtrl.newClass.name" class="form-control" type="text"  placeholder="John Smith">
+                    <p><b>Class Name</b></p>
+                    <input ng-model="classDetailCtrl.newClass.name" class="form-control" type="text" placeholder="Cohort 69">
                 </div>
                 <div class="col-md-8">
                     <p><b>Description</b></p>
-                    <input ng-model="classDetailCtrl.newClass.description" class="form-control" type="text"  placeholder="John Smith teaches all the things">
-                </div>              
+                    <input ng-model="classDetailCtrl.newClass.description" class="form-control" type="text" placeholder="John Smith teaches all the things">
+                </div>
             </div>
             <br>
-            <div class="row text-center">
-                 <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-4">
                     <p><b>Teacher</b></p>
                     <select class="form-control" ng-model="classDetailCtrl.newClass.teacherId">
-                        <option value="" disabled selected">--- Select Teacher ---</option>
+                        <option value="" disabled selected ><span>--- Select Teacher ---</span></option>
                 <!-- TODO: figure out how to center this -->
-                <option ng-repeat="teacher in classDetailCtrl.teachers" ng-value="teacher.teacherId">{{teacher.name}}</option>
+                <option ng-repeat="teacher in classDetailCtrl.teachers " ng-value="teacher.teacherId ">{{teacher.name}}</option>
             </select>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 ">
             <p><b>Start Date</b></p>
-            <input ng-model="classDetailCtrl.newClass.startDate" class="form-control" type="text"  placeholder="2016-01-01">
+            <input ng-model="classDetailCtrl.newClass.startDate " class="form-control " type="date "  placeholder="2016-01-01 ">
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 ">
             <p><b>End Date</b></p>
-            <input ng-model="classDetailCtrl.newClass.endDate" class="form-control" type="text"  placeholder="2016-12-01">
+            <input ng-model="classDetailCtrl.newClass.endDate " class="form-control " type="date "  placeholder="2016-12-01 ">
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 ">
             <p><b>Night Class?</b></p>
-            <input ng-model="classDetailCtrl.newClass.isNightClass" class="form-control" type="text"  placeholder="true/false">
+            <input ng-model="classDetailCtrl.newClass.isNightClass " class="form-control " type="text "  placeholder="true/false ">
         </div>
     </div>
     <br>
-    <button ng-click="classDetailCtrl.createClass(classDetailCtrl.newClass)" type="button" class="btn btn-primary" style="float: right;">
-        <span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Add Class
+    <button ng-click="classDetailCtrl.createClass(classDetailCtrl.newClass) " type="button " class="btn btn-primary " style="float: right; ">
+        <span class="glyphicon glyphicon-plus "></span>&nbsp;&nbsp;Add Class
     </button>
 </div>
 </div>

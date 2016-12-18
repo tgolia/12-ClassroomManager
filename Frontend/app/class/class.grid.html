@@ -15,8 +15,8 @@
         <tr ng-repeat="class in classGridCtrl.classes"> 
             <td ui-sref="class.detail({id:{{class.classId}}})" style="cursor: pointer;">{{class.name}}</td>
             <td ui-sref="class.detail({id:{{class.classId}}})" style="cursor: pointer;">{{class.teacher}}</td>
-            <td ui-sref="class.detail({id:{{class.classId}}})" style="cursor: pointer;">{{class.startDate}}</td>
-            <td ui-sref="class.detail({id:{{class.classId}}})" style="cursor: pointer;">{{class.endDate}}</td>
+            <td ui-sref="class.detail({id:{{class.classId}}})" style="cursor: pointer;">{{class.startDate | date}}</td>
+            <td ui-sref="class.detail({id:{{class.classId}}})" style="cursor: pointer;">{{class.endDate | date}}</td>
             <td ui-sref="class.detail({id:{{class.classId}}})" style="cursor: pointer;">{{class.students}}</td>
             <td>
                 <button ui-sref="class.detail({id:{{class.classId}}})" type="button" class="btn btn-primary" ng-click=""><span class="glyphicon glyphicon-pencil"></button>&nbsp;&nbsp;

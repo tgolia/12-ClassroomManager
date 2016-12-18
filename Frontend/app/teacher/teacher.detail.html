@@ -36,8 +36,8 @@
                 </thead>
                 <tr ng-repeat="class in teacherDetailCtrl.currentTeacher.classes" ui-sref="class.detail({id:{{class.classId}}})" style="cursor: pointer;">
                     <td>{{class.name}}</td>
-                    <td>{{class.startDate}}</td>
-                    <td>{{class.endDate}}</td>
+                    <td>{{class.startDate | date}}</td>
+                    <td>{{class.endDate | date}}</td>
                 </tr>
             </table>
         </div>
@@ -65,11 +65,11 @@
                 </div>
                 <div class="col-md-2">
                     <p><b>Start Date</b></p>
-                    <input ng-model="teacherDetailCtrl.newTeacher.startDate" class="form-control" type="text" placeholder="2016-01-01">
+                    <input ng-model="teacherDetailCtrl.newTeacher.startDate" class="form-control" type="date" placeholder="2016-01-01">
                 </div>
                 <div class="col-md-2">
                     <p><b>End Date</b></p>
-                    <input ng-model="teacherDetailCtrl.newTeacher.endDate" class="form-control" type="text" placeholder="2016-12-01">
+                    <input ng-model="teacherDetailCtrl.newTeacher.endDate" class="form-control" type="date" placeholder="2016-12-01">
                 </div>
             </div>
             <br>
