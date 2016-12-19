@@ -39,7 +39,8 @@
             <div class="row">
                 <div class="col-md-2">
                     <select class="form-control" ng-options="student.studentId as student.name for student in classDetailCtrl.students" ng-model="classDetailCtrl.newStudentId">
-                        <option value="" disabled selected>--- Add Student To Class ---</option> <!-- TODO: figure out how to center this -->
+                        <option value="" disabled selected>--- Add Student To Class ---</option>
+                        <!-- TODO: figure out how to center this -->
                     </select>
                 </div>
                 <button ng-click="classDetailCtrl.addStudentToClass(classDetailCtrl.classId, classDetailCtrl.newStudentId)" type="button" class="btn btn-primary">
@@ -67,6 +68,8 @@
         </div>
     </div>
 </div>
+
+
 <!-- Add new class html -->
 <div ng-show="classDetailCtrl.isNewClass" class="container-fluid" style="margin: 10px;">
     <div class="panel panel-primary">
@@ -89,28 +92,28 @@
                 <div class="col-md-4">
                     <p><b>Teacher</b></p>
                     <select class="form-control" ng-model="classDetailCtrl.newClass.teacherId">
-                        <option value="" disabled selected ><span>--- Select Teacher ---</span></option>
-                <!-- TODO: figure out how to center this -->
-                <option ng-repeat="teacher in classDetailCtrl.teachers " ng-value="teacher.teacherId ">{{teacher.name}}</option>
-            </select>
-        </div>
-        <div class="col-md-3 ">
-            <p><b>Start Date</b></p>
-            <input ng-model="classDetailCtrl.newClass.startDate " class="form-control " type="date "  placeholder="2016-01-01 ">
-        </div>
-        <div class="col-md-3 ">
-            <p><b>End Date</b></p>
-            <input ng-model="classDetailCtrl.newClass.endDate " class="form-control " type="date "  placeholder="2016-12-01 ">
-        </div>
-        <div class="col-md-2 ">
-            <p><b>Night Class?</b></p>
-            <input ng-model="classDetailCtrl.newClass.isNightClass " class="form-control " type="text "  placeholder="true/false ">
+                        <option value="" disabled selected><span>--- Select Teacher ---</span></option>
+                        <!-- TODO: figure out how to center this -->
+                        <option ng-repeat="teacher in classDetailCtrl.teachers " ng-value="teacher.teacherId ">{{teacher.name}}</option>
+                    </select>
+                </div>
+                <div class="col-md-3 ">
+                    <p><b>Start Date</b></p>
+                    <input ng-model="classDetailCtrl.newClass.startDate " class="form-control " type="date " placeholder="2016-01-01 ">
+                </div>
+                <div class="col-md-3 ">
+                    <p><b>End Date</b></p>
+                    <input ng-model="classDetailCtrl.newClass.endDate " class="form-control " type="date " placeholder="2016-12-01 ">
+                </div>
+                <div class="col-md-2 ">
+                    <p><b>Night Class?</b></p>
+                    <input ng-model="classDetailCtrl.newClass.isNightClass " class="form-control " type="text " placeholder="true/false ">
+                </div>
+            </div>
+            <br>
+            <button ng-click="classDetailCtrl.createClass(classDetailCtrl.newClass) " type="button " class="btn btn-primary " style="float: right; ">
+                <span class="glyphicon glyphicon-plus "></span>&nbsp;&nbsp;Add Class
+            </button>
         </div>
     </div>
-    <br>
-    <button ng-click="classDetailCtrl.createClass(classDetailCtrl.newClass) " type="button " class="btn btn-primary " style="float: right; ">
-        <span class="glyphicon glyphicon-plus "></span>&nbsp;&nbsp;Add Class
-    </button>
-</div>
-</div>
 </div>
